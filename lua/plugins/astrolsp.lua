@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
@@ -40,11 +40,27 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      "ts_ls",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      tsserver = {
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints= "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName= "all",
+              includeInlayFunctionParameterTypeHints= "all",
+              includeInlayVariableTypeHints= "all",
+              includeInlayPropertyDeclarationTypeHints= "all",
+              includeInlayFunctionLikeReturnTypeHints= "all",
+              includeInlayEnumMemberValueHints= "all",
+            }
+          }
+        }
+      }
     },
     -- customize how language servers are attached
     handlers = {
