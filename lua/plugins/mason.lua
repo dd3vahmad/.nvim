@@ -11,7 +11,8 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "tsserver"
+        "tsserver",
+        "gopls"     -- Go language server
         -- add more arguments for adding more language servers
       },
     },
@@ -23,6 +24,8 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
+        "golangci-lint", -- Go linter
+        "gofumpt" 
         -- add more arguments for adding more null-ls sources
       },
     },

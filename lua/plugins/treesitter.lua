@@ -14,7 +14,8 @@ return {
       "tsx",
       "html",
       "css",
-      "json"
+      "json",
+      "go"
     },
     auto_install = true,
   },
