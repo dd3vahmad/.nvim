@@ -5,6 +5,10 @@ return {
   opts = {
     mappings = {
       n = {
+        ["<leader>tt"] = {
+          function() require("toggleterm").toggle(1) end,
+          desc = "Toggle / Focus Terminal 1",
+        },
         ["<leader>ph"] = { "<cmd>Telescope neovim-project history<CR>", desc = "Project History" },
         ["<leader>pd"] = { "<cmd>Telescope neovim-project discover<CR>", desc = "Discover Projects" },
         ["<Tab>"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
