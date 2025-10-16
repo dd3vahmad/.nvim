@@ -15,6 +15,14 @@ return {
         ["<S-Tab>"] = { "<cmd>bprevious<cr>", desc = "Previous buffer" },
         ["<C-w>"] = { "<cmd>Bdelete<cr>", desc = "Close current buffer" },
         ["<C-a>"] = { "ggVG", desc = "Selects all in the current buffer" },
+        ["<leader>r"] = {
+          function()
+            local file = vim.fn.expand "%:p"
+            local out = vim.fn.expand "%:p:r"
+            vim.cmd("!gcc " .. file .. " -o " .. out .. " && " .. out)
+          end,
+          desc = "Compile and run C file",
+        },
       },
     },
   },
